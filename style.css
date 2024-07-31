@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'work_sans';
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(275, 100%, 97%);
+    margin: 0;
+}
+
+.image {
+    background-image: url('assets/images/background-pattern-mobile.svg');
+    width: 100%;
+    min-height: 40vh;
+}
+
+.container {
+    font-family: 'work_sans', sans-serif;
+    padding: 20px;
+    width: 80%;
+    height: fit-content;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+}
+
+.container .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    color: hsl(292, 42%, 14%);
+}
+
+.container .header img {
+    width: 25px;
+    height: 25px;
+}
+
+.container .main .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.container .main .question:is(:hover, :focus) {
+    color: hsl(292, 80%, 49%);
+}
+
+.container .main .answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(292, 16%, 49%);
+}
+
+/* Hide answers and minus icons by default */
+.container .main .hidden {
+    display: none;
+}
+
+/* Media Query */
+@media screen and (min-width: 600px) {
+    .image {
+        background-image: url(./assets/images/background-pattern-desktop.svg);
+        width: 100%;
+    }
+
+    .container {
+        width: 50%;
+    }
+}
