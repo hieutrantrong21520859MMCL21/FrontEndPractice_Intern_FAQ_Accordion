@@ -1,4 +1,4 @@
-# Frontend Mentor - FAQ accordion
+# Frontend Mentor - FAQ accordion (Only HTML & CSS)
 
 ## 1. Overview
 
@@ -24,33 +24,24 @@ Users should be able to:
 
 ### a) Built with
 
-- HTML
+- Semantic HTML
 - CSS
-- JavaScript
 - Mobile - first workflow
 
 ### b) What I learned
 
 - How to apply *click* effect using JavaScript.
 - How to use some query methods in JavaScript.
+- How to use *details* tag for toggle effect.
 - Some codes I am most proud of (which consist of knowledge I have learned):
 
-```javascript
-const question_lst = document.querySelectorAll('.container .main .question')
-const plus_lst = document.querySelectorAll('.container .main .plus');
-const minus_lst = document.querySelectorAll('.container .main .minus');
-const answer_lst = document.querySelectorAll('.container .main .answer');
+```css
+.container ul details summary::after {
+    content: url(./assets/images/icon-plus.svg);
+}
 
-console.log(question_lst)
-
-for (let i = 0; i < question_lst.length; i++)
-{
-    question_lst[i].addEventListener('click', function() {
-        
-        plus_lst[i].classList.toggle('hidden');
-        minus_lst[i].classList.toggle('hidden');
-        answer_lst[i].classList.toggle('hidden');
-    })
+.container ul details[open] summary::after{
+    content: url(./assets/images/icon-minus.svg);
 }
 ```
 
