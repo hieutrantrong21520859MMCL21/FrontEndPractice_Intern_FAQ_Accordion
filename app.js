@@ -1,16 +1,55 @@
-/*const question_lst = document.querySelectorAll('.container ul .question')
-const plus_lst = document.querySelectorAll('.container ul .plus');
-const minus_lst = document.querySelectorAll('.container ul .minus');
-const answer_lst = document.querySelectorAll('.container ul .answer');
+const display = document.querySelector('.container ul');
 
-console.log(question_lst)
+let data = [
+    
+    {
+        'question': 'What is Frontend Mentor, and how will it help me?',
+        'answer': "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building."
+    },
 
-for (let i = 0; i < question_lst.length; i++)
-{
-    question_lst[i].addEventListener('click', function() {
-        
-        plus_lst[i].classList.toggle('hidden');
-        minus_lst[i].classList.toggle('hidden');
-        answer_lst[i].classList.toggle('hidden');
-    })
-}*/
+    {
+        'question': 'Is Frontend Mentor free?',
+        'answer': "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels."
+    },
+
+    {
+        'question': 'Can I use Frontend Mentor projects in my portfolio?',
+        'answer': "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!"
+    },
+
+    {
+        'question': "How can I get help if I'm stuck on a challenge?",
+        'answer': "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members."
+    },
+];
+
+let htmlText = "";
+
+data.forEach(couple => {
+
+    htmlText += `<li>
+
+        <details>
+
+          <summary class="question">
+
+            <h4>
+          
+              ${couple.question}
+    
+            </h4>
+
+          </summary>
+
+          <p>
+
+            ${couple.answer}  
+
+          </p>
+
+        </details>
+
+      </li>`
+})
+
+display.innerHTML = htmlText;

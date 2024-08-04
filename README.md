@@ -33,6 +33,7 @@ Users should be able to:
 - How to apply *click* effect using JavaScript.
 - How to use some query methods in JavaScript.
 - How to use *details* tag for toggle effect.
+- How to display JSON data using JavaScript.
 - Some codes I am most proud of (which consist of knowledge I have learned):
 
 ```css
@@ -43,6 +44,39 @@ Users should be able to:
 .container ul details[open] summary::after{
     content: url(./assets/images/icon-minus.svg);
 }
+```
+
+```javascript
+let htmlText = "";
+
+data.forEach(couple => {
+
+    htmlText += `<li>
+
+        <details>
+
+          <summary class="question">
+
+            <h4>
+          
+              ${couple.question}
+    
+            </h4>
+
+          </summary>
+
+          <p>
+
+            ${couple.answer}  
+
+          </p>
+
+        </details>
+
+      </li>`
+})
+
+display.innerHTML = htmlText;
 ```
 
 ### c) Useful resources
