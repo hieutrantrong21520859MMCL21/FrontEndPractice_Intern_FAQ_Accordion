@@ -1,55 +1,55 @@
-const display = document.querySelector('.container ul');
+const body = document.getElementsByTagName('body');
+const question_lst = document.querySelectorAll('.container ul li .question')
+const plus_lst = document.querySelectorAll('.container ul li .question .plus');
+const minus_lst = document.querySelectorAll('.container ul li .question .minus');
+const answer_lst = document.querySelectorAll('.container ul li .answer');
 
-let data = [
-    
-    {
-        'question': 'What is Frontend Mentor, and how will it help me?',
-        'answer': "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building."
-    },
 
-    {
-        'question': 'Is Frontend Mentor free?',
-        'answer': "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels."
-    },
+console.log(body)
 
-    {
-        'question': 'Can I use Frontend Mentor projects in my portfolio?',
-        'answer': "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!"
-    },
+/* Event */
+for (let i = 0; i < question_lst.length; i++)
+{
 
-    {
-        'question': "How can I get help if I'm stuck on a challenge?",
-        'answer': "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members."
-    },
-];
+  question_lst[i].addEventListener('click', function() {
+        
+      plus_lst[i].classList.toggle('hidden');
+      minus_lst[i].classList.toggle('hidden');
+      answer_lst[i].classList.toggle('active');
 
-let htmlText = "";
+      let copied_ans_lst = Array.from(answer_lst).slice()
+      copied_ans_lst.splice(i, 1);
 
-data.forEach(couple => {
+      let copied_plus_lst = Array.from(plus_lst).slice();
+      copied_plus_lst.splice(i, 1);
 
-    htmlText += `<li>
+      let copied_minus_lst = Array.from(minus_lst).slice();
+      copied_minus_lst.splice(i, 1);
 
-        <details>
+      // Close the others
+      copied_ans_lst.forEach(ele => {
 
-          <summary class="question">
+        if (ele.classList.contains('active'))
+        {
+          ele.classList.remove('active');
+        }
 
-            <h4>
-          
-              ${couple.question}
-    
-            </h4>
+      })
 
-          </summary>
+      copied_plus_lst.forEach(ele => {
+        
+        if (ele.classList.contains('hidden'))
+        {
+          ele.classList.remove('hidden');
+        }
+      })
 
-          <p>
-
-            ${couple.answer}  
-
-          </p>
-
-        </details>
-
-      </li>`
-})
-
-display.innerHTML = htmlText;
+      copied_minus_lst.forEach(ele => {
+        
+        if (!ele.classList.contains('hidden'))
+        {
+          ele.classList.add('hidden');
+        }
+      })
+  })
+}

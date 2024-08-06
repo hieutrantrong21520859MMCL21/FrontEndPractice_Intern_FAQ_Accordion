@@ -53,25 +53,33 @@ body {
     padding-right: 20px;
 }
 
-.container ul .question {
+.container ul li .question {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-
+    
     cursor: pointer;
 }
 
-.container ul .question:is(:hover, :focus) {
+.container ul li .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1.5s ease;
+
+    font-size: 15px;
+}
+
+.container ul li .question:is(:hover, :focus) {
     color: hsl(292, 80%, 49%);
 }
 
-.container ul details summary::after {
-    content: url(./assets/images/icon-plus.svg);
+.container ul li .answer.active {
+    max-height: 300px;
 }
 
-.container ul details[open] summary::after {
-    content: url(./assets/images/icon-minus.svg);
+.hidden {
+    display: none;
 }
 
 /* Media Query */
