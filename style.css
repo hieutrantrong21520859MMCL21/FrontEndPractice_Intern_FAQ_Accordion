@@ -60,24 +60,17 @@ body {
     gap: 20px;
 
     cursor: pointer;
-    transition: all 0.2s linear;
 }
 
 .container ul .question:is(:hover, :focus) {
     color: hsl(292, 80%, 49%);
 }
 
-.container ul .answer {
-    font-size: 16px;
-    font-weight: 400;
-    color: hsl(292, 16%, 49%);
-}
-
 .container ul details summary::after {
     content: url(./assets/images/icon-plus.svg);
 }
 
-.container ul details[open] summary::after{
+.container ul details[open] summary::after {
     content: url(./assets/images/icon-minus.svg);
 }
 
