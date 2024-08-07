@@ -20,6 +20,7 @@ body {
 
 .container {
     font-family: 'work_sans', sans-serif;
+    padding: 20px;
     width: 80%;
     height: fit-content;
     position: absolute;
@@ -33,11 +34,10 @@ body {
 }
 
 .container header {
-    padding: 0px 20px 0px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
     color: hsl(292, 42%, 14%);
 }
@@ -47,31 +47,29 @@ body {
     height: 25px;
 }
 
-.container ul {
-    list-style-type: none;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.container ul .question {
+.container main .question {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
 
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
-.container ul .question:is(:hover, :focus) {
+.container main .question:is(:hover, :focus) {
     color: hsl(292, 80%, 49%);
 }
 
-.container ul details summary::after {
-    content: url(./assets/images/icon-plus.svg);
+.container main .answer {
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(292, 16%, 49%);
 }
 
-.container ul details[open] summary::after {
-    content: url(./assets/images/icon-minus.svg);
+/* Hide answers and minus icons by default */
+.hidden {
+    display: none;
 }
 
 /* Media Query */
