@@ -65,7 +65,7 @@ body {
 .container ul li .answer {
     max-height: 0;
     overflow: hidden;
-    transition: all 1.5s ease;
+    transition: all 200ms ease;
 
     font-size: 15px;
 }
