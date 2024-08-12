@@ -4,9 +4,6 @@ const plus_lst = document.querySelectorAll('.container ul li .question .plus');
 const minus_lst = document.querySelectorAll('.container ul li .question .minus');
 const answer_lst = document.querySelectorAll('.container ul li .answer');
 
-
-console.log(body)
-
 /* Event */
 for (let i = 0; i < question_lst.length; i++)
 {
